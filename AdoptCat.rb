@@ -9,22 +9,22 @@ uri = URI('http://localhost:3000/cats')
 
 #Generate welcome message and start gathering data from user
 puts "Welcome to Adopt A Cat: The Preferred Tool for Finding Your Perfect Cat "
-puts "Please answer a few questions to recieve personalized matches"
+puts "Answer a few questions to recieve personalized matches"
 puts "You can press enter to skip any question"
-puts "What gender would you like your cat to be? Please enter male or female"
+puts "What gender would you like your cat to be? Enter male or female"
 genderInput = gets.chomp
-puts "What color would you like your cat to be? Please enter one of the following:"
+puts "What color would you like your cat to be? Enter one of the following:"
 puts "black, white, orange, tabby, brown, tortoise-shell, gray, cream, red"
 colorInput = gets.chomp
-puts "What age would you like your cat to be? Please enter an integer between 0 and 20"
+puts "What age would you like your cat to be? Enter an integer between 0 and 20"
 ageInput = gets.chomp
-puts "What size would you like your cat to be? Please enter small, medium, or large"
+puts "What size would you like your cat to be? Enter small, medium, or large"
 sizeInput = gets.chomp
-puts "What hair length would you like your cat to have? Please enter short, medium, long, or hairless"
+puts "What hair length would you like your cat to have? Enter short, medium, long, or hairless"
 hairInput = gets.chomp
-puts "Would you like this as a CSV file?"
+puts "Would you like this as a CSV file? Enter y or n"
 csvInput = gets.chomp
-puts "Thank you for answering."
+puts "Thank you for answering. One momement"
 
 
 
@@ -36,9 +36,9 @@ end
 if (colorInput =='black' || colorInput == 'white')
 	params.store('color', colorInput)
 end
-#if (ageInput. < 20 && ageInput>=0)
-#	params.store('age', ageInput)
-#end
+if (ageInput.to_i < 20 && ageInput.to_i>=0)
+	params.store('age', ageInput)
+end
 if (sizeInput =='small' || sizeInput == 'medium'|| sizeInput == 'large')
 	params.store('size', sizeInput)
 end
