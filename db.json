@@ -1,0 +1,9 @@
+{
+	"cats": [
+	{
+		"id": 0,
+		"name": "John",
+		"gender": "Male"
+	}
+	]
+}
