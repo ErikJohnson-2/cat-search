@@ -4,8 +4,6 @@ require 'net/http'
 require 'csv'
 require 'json'
 
-#Location of server
-uri = URI('http://localhost:3000/cats')
 
 #Generate welcome message and start gathering data from user
 puts "Welcome to Adopt A Cat: The Preferred Tool for Finding Your Perfect Cat "
@@ -27,6 +25,8 @@ csvInput = gets.chomp
 puts "Thank you for answering. One momement"
 
 
+#Location of server
+uri = URI('http://localhost:3000/cats')
 
 #Generate query params by checking user inputs
 params = {}
@@ -36,8 +36,8 @@ end
 if (colorInput =='black' || colorInput == 'white')
 	params.store('color', colorInput)
 end
-if (ageInput.to_i < 20 && ageInput.to_i>=0)
-	params.store('age', ageInput)
+if (ageInput.to_i < 20 && ageInput.to_i>=0 && ageInput.match(/^(\d)+$/))
+	params.store('age', ageInput.to_i)
 end
 if (sizeInput =='small' || sizeInput == 'medium'|| sizeInput == 'large')
 	params.store('size', sizeInput)
